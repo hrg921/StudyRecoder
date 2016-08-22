@@ -1,4 +1,4 @@
-package mp.hd3534.studyrecoder;
+package mp.hd3534.studyrecoder.Database;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -13,20 +13,17 @@ public class DBManager extends SQLiteOpenHelper {
         super(context, name, factory, version);
     }
 
+    // initialize Database, called once to make DB
     @Override
     public void onCreate(SQLiteDatabase db) {
         // CREATE TABLE
-        db.execSQL("CREATE TABLE STUDY_RECORD(" +
-                "year INTEGER" +
-                "month INTEGER" +
-                "date INTEGER" +
-                "hour INTEGER" +
-                "minute INTEGER" +
-                "second INTEGER");
+        db.execSQL(DataBases.CreateDB._CREATE);
     }
 
+    // version update -> remake DB
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+        db.execSQL("DROP TABLE IF EXISTS " + DataBases.CreateDB._TABLENAME);
+        onCreate(db);
     }
 }
