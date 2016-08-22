@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="mp.hd3534.studyrecoder.SplashActivity"
+    android:background="#b6dccf">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:src="@drawable/study_recoder_log_ver0_screen"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true"
+        android:background="#b6dccf" />
+</RelativeLayout>
