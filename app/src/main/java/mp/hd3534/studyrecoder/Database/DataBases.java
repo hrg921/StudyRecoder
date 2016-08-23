@@ -18,12 +18,12 @@ public final class DataBases {
         public static final String SECOND = "second";
 
         public static final String _CREATE =
-                "CREATE TABLE" + _TABLENAME + "(" +
-                YEAR + "INTEGER NOT NULL, " +
-                MONTH + "INTEGER NOT NULL, " +
-                DATE + "INTEGER NOT NULL, " +
-                HOUR + "INTEGER NOT NULL, " +
-                MINUTE + "INTEGER NOT NULL, " +
-                SECOND + "INTEGER NOT NULL )";
+                "CREATE TABLE " + _TABLENAME + "(" +
+                YEAR + " INTEGER NOT NULL, " +
+                MONTH + " INTEGER NOT NULL, " +
+                DATE + " INTEGER NOT NULL, " +
+                HOUR + " INTEGER NOT NULL, " +
+                MINUTE + " INTEGER NOT NULL, " +
+                SECOND + " INTEGER NOT NULL )";
     }
 }

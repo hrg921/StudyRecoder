@@ -1,6 +1,7 @@
 package mp.hd3534.studyrecoder;
 
 import android.app.Activity;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,6 +11,10 @@ import android.widget.Toast;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import mp.hd3534.studyrecoder.Data.StudyData;
+import mp.hd3534.studyrecoder.Database.DbController;
+import mp.hd3534.studyrecoder.Database.DbOpenHelper;
 
 public class RecordActivity extends Activity {
 
@@ -23,13 +28,19 @@ public class RecordActivity extends Activity {
     private static final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
     private static final SimpleDateFormat timeFormat = new SimpleDateFormat("HHmmss");
 
+    private DbController dbController;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_record);
         initView();
+        initDatabase();
     }
 
+    /******************** initializer *******************/
+
+    // view
     private void initView() {
         editText_date = (EditText)findViewById(R.id.record_editText_date);
         editText_hour = (EditText)findViewById(R.id.record_editText_hour);
@@ -49,9 +60,17 @@ public class RecordActivity extends Activity {
                 }
                 Date date = parseDate();
                 Date time = parseTime();
+                dbController.insert(new StudyData(date.getYear(), date.getMonth(), date.getDate(), time.getHours(), time.getMinutes(), time.getSeconds()));
             }
         });
     }
+
+    // data
+    private void initDatabase() {
+        dbController = new DbController(getApplicationContext());
+    }
+
+    /******************** validator *******************/
 
     private Date parseDate () {
         Date date = null;
