@@ -19,9 +19,13 @@
         </activity>
         <activity android:name=".RecordActivity" >
         </activity>
-        <activity android:name=".GraphActivity" >
+        <activity android:name=".GraphActivities.YearlyGraphActivity" >
         </activity>
         <activity android:name=".SelectTimeActivity" >
+        </activity>
+        <activity android:name=".GraphActivities.MonthlyGraphActivity" >
+        </activity>
+        <activity android:name=".GraphActivities.DailyGraphActivity" >
         </activity>
     </application>
 
