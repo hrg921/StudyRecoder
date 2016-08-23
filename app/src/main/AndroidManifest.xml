@@ -21,6 +21,8 @@
         </activity>
         <activity android:name=".GraphActivity" >
         </activity>
+        <activity android:name=".SelectTimeActivity" >
+        </activity>
     </application>
 
 </manifest>

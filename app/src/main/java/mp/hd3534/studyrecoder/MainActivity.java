@@ -34,5 +34,12 @@ public class MainActivity extends Activity {
                 startActivity(intent);
             }
         });
+        button_graph.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), SelectTimeActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
