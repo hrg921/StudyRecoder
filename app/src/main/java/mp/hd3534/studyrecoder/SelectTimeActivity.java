@@ -1,15 +1,16 @@
 package mp.hd3534.studyrecoder;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class SelectTimeActivity extends Activity {
+import mp.hd3534.studyrecoder.GraphActivities.DailyGraphActivity;
+import mp.hd3534.studyrecoder.GraphActivities.MonthlyGraphActivity;
+import mp.hd3534.studyrecoder.GraphActivities.YearlyGraphActivity;
 
-    private static final String YEARLY = "Y";
-    private static final String MONTHLY = "M";
-    private static final String DAYLY = "D";
+public class SelectTimeActivity extends Activity {
 
     private Button yearly_button;
     private Button monthly_button;
@@ -33,19 +34,22 @@ public class SelectTimeActivity extends Activity {
         yearly_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(getApplicationContext(), YearlyGraphActivity.class);
+                startActivity(intent);
             }
         });
         monthly_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(getApplicationContext(), MonthlyGraphActivity.class);
+                startActivity(intent);
             }
         });
         daily_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(getApplicationContext(), DailyGraphActivity.class);
+                startActivity(intent);
             }
         });
     }

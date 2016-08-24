@@ -31,4 +31,5 @@
         android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/select_time_yearly_button"
         android:layout_marginBottom="150dp" />
-</>
+
+</RelativeLayout>
