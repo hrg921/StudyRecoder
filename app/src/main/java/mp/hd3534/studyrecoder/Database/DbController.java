@@ -17,8 +17,8 @@ import mp.hd3534.studyrecoder.Data.StudyData;
  */
 public class DbController {
 
-    private static final String SELECT_ALL_SQL = "SELECT * FROM " + DataBases.CreateDB._TABLENAME + ";";
-    private static final String SELECT_BY_WHERE_SQL = "SELECT * FROM " + DataBases.CreateDB._TABLENAME + " WHERE ";
+    private static final String SELECT_ALL_SQL = "SELECT year, month, date, hour, minute, second FROM " + DataBases.CreateDB._TABLENAME + " ORDER BY year ;";
+    private static final String SELECT_BY_WHERE_SQL = "SELECT year, month, date, hour, minute, second FROM " + DataBases.CreateDB._TABLENAME + " ORDER BY year ASC WHERE ";
 
     private DbOpenHelper dbOpenHelper;
     private SQLiteDatabase database;

@@ -60,7 +60,7 @@ public class RecordActivity extends Activity {
                 }
                 Date date = parseDate();
                 Date time = parseTime();
-                dbController.insert(new StudyData(date.getYear(), date.getMonth(), date.getDate(), time.getHours(), time.getMinutes(), time.getSeconds()), getApplicationContext());
+                dbController.insert(new StudyData(date.getYear()+1900, date.getMonth(), date.getDate(), time.getHours(), time.getMinutes(), time.getSeconds()), getApplicationContext());
             }
         });
     }

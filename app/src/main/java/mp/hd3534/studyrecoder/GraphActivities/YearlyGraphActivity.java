@@ -16,6 +16,7 @@ import com.github.mikephil.charting.data.LineDataSet;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -69,49 +70,52 @@ public class YearlyGraphActivity extends Activity {
 
     /******************** graph *******************/
 
+    //        Log.d("yearList", "year[" + yearList.get(i) + "] : " + yearDataMap.get(yearList.get(i)));
+    // 1. 모든 스터디 데이터를 년도별로 분류한다
+    // 2. 스터디 데이터 리스트를 년도별로 이용하여 년도별 총합을 구한다
     private void makeYearlyGraph() {
-//        yearDataMap = new HashMap<>();
-//        yearListMap = new HashMap<>();
-//
-//        List<StudyData> studyDataList = dbController.selectAll();
-//        List<Integer> studiedYearList = new ArrayList<>();
-//
-//        for (StudyData studyData : studyDataList) {
-//            if (yearDataMap.containsKey(studyData.getYear())) {
-//                yearListMap.get(studyData.getYear()).add(studyData);
-//                studiedYearList.add(studyData.getYear());
-//            } else {
-//                List<StudyData> dataList = new ArrayList<>();
-//                dataList.add(studyData);
-//                yearListMap.put(studyData.getYear(), dataList);
-//            }
-//        }
-//
-//        for (int i = 0; i < studiedYearList.size(); i++) {
-//            yearDataMap.put(studiedYearList.get(i), DataProcessHelper.getHourSumByList(yearListMap.get(studiedYearList.get(i))));
-//        }
-//
+        yearDataMap = new HashMap<>();
+        yearListMap = new HashMap<>();
+
+        List<StudyData> studyDataList = dbController.selectAll();
+        List<Integer> yearList = new ArrayList<>();
+
+        for (StudyData studyData : studyDataList) {
+            if (yearListMap.containsKey(studyData.getYear())) {
+                yearListMap.get(studyData.getYear()).add(studyData);
+            } else {
+                List<StudyData> datas = new ArrayList<>();
+                datas.add(studyData);
+                yearList.add(studyData.getYear());
+                yearListMap.put(studyData.getYear(), datas);
+            }
+        }
+
+        Collections.sort(yearList, new Comparator<Integer>() {
+            @Override
+            public int compare(Integer lhs, Integer rhs) {
+                return lhs.compareTo(rhs);
+            }
+        });
+
+        for (int i = 0; i < yearList.size(); i++) {
+            yearDataMap.put(yearList.get(i), DataProcessHelper.getHourSumByList(yearListMap.get(yearList.get(i))));
+        }
+
         List<Entry> entries = new ArrayList<>();
 
-//        for (int i = 0; i < studiedYearList.size(); i++) {
-//            int year = studiedYearList.get(i);
-//            int hour = yearDataMap.get(year);
-//            Log.d("Yearly_Entry", "year:" + year + " hour:" + hour);
-//            entries.add(new Entry(year, hour));
-//        }
-
-
-        for (int i = 0; i < 100; i++) {
-            entries.add(new Entry(i, i));
+        for (int i = 0; i < yearList.size(); i++) {
+            int year = yearList.get(i);
+            int hour = yearDataMap.get(yearList.get(i));
+            entries.add(new Entry(year, hour));
         }
 
         LineDataSet dataSet = new LineDataSet(entries, "Label");
-        dataSet.setColor(Color.BLACK);
-        dataSet.setValueTextColor(Color.BLACK);
+        dataSet.setColor(Color.RED);
+        dataSet.setValueTextColor(Color.YELLOW);
 
         LineData lineData = new LineData(dataSet);
         lineChart.setData(lineData);
-//        lineChart.setBackgroundColor(Color.parseColor("#ffffff"));
         lineChart.invalidate();
     }
 }
