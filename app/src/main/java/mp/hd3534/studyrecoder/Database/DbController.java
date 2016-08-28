@@ -43,6 +43,15 @@ public class DbController {
         Toast.makeText(context, "데이터가 성공적으로 등록되었습니다", Toast.LENGTH_SHORT).show();
     }
 
+    public boolean delete(int _id) {
+        int result = database.delete(DataBases.CreateDB._TABLENAME, "_id=?", new String[] {String.valueOf(_id)});
+        if (result!=0) {
+            Toast.makeText(context, "데이터가 성공적으로 삭제되었습니다", Toast.LENGTH_SHORT).show();
+            return true;
+        }
+        return false;
+    }
+
     public List<StudyData> selectAll() {
         List<StudyData> studyDataList = new ArrayList<>();
         Cursor results = database.rawQuery(SELECT_ALL_SQL, null);
