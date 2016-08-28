@@ -38,7 +38,7 @@ public class ListActivity extends Activity {
     }
 
     private void initList() {
-        listViewAdapter = new ListViewAdapter(getApplicationContext(), R.layout.listview_item, (StudyData[])studyDatas.toArray());
+        listViewAdapter = new ListViewAdapter(getApplicationContext(), R.layout.listview_item, (StudyData[])studyDatas.toArray(), dbController);
         listView.setChoiceMode(AbsListView.CHOICE_MODE_NONE);
         listView.setAdapter(listViewAdapter);
     }
