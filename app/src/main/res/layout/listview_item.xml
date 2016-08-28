@@ -15,7 +15,8 @@
             android:text="New Text"
             android:id="@+id/listview_item_date"
             android:layout_gravity="center_horizontal"
-            android:gravity="center" />
+            android:gravity="center"
+            android:textSize="15dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -35,7 +36,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="New Button"
+            android:text="X"
             android:id="@+id/listview_item_button"
             android:layout_weight="1" />
     </LinearLayout>
