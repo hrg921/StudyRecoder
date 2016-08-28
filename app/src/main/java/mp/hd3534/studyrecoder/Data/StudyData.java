@@ -5,6 +5,7 @@ package mp.hd3534.studyrecoder.Data;
  */
 public class StudyData {
 
+    private int _id;
     private int year;
     private int month;
     private int date;
@@ -19,6 +20,15 @@ public class StudyData {
         this.hour = hour;
         this.minute = minute;
         this.second = second;
+    }
+
+    public StudyData(int _id, int year, int month, int date, int hour, int minute, int second) {
+        this(year, month, date, hour, minute, second);
+        this._id = _id;
+    }
+
+    public int get_id() {
+        return _id;
     }
 
     public int getYear() {

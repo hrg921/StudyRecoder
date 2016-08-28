@@ -25,8 +25,8 @@ public class SelectTimeActivity extends Activity {
 
     private void initView() {
         yearly_button = (Button)findViewById(R.id.select_time_yearly_button);
-        monthly_button = (Button)findViewById(R.id.select_time_monthly_button);
-        daily_button = (Button)findViewById(R.id.select_time_daily_button);
+//        monthly_button = (Button)findViewById(R.id.select_time_monthly_button);
+//        daily_button = (Button)findViewById(R.id.select_time_daily_button);
         initListeners();
     }
 
@@ -38,19 +38,19 @@ public class SelectTimeActivity extends Activity {
                 startActivity(intent);
             }
         });
-        monthly_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), MonthlyGraphActivity.class);
-                startActivity(intent);
-            }
-        });
-        daily_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), DailyGraphActivity.class);
-                startActivity(intent);
-            }
-        });
+//        monthly_button.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(getApplicationContext(), MonthlyGraphActivity.class);
+//                startActivity(intent);
+//            }
+//        });
+//        daily_button.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(getApplicationContext(), DailyGraphActivity.class);
+//                startActivity(intent);
+//            }
+//        });
     }
 }

@@ -9,27 +9,9 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="년간 그래프"
+        android:text="그래프 생성"
         android:id="@+id/select_time_yearly_button"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="150dp" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="월간 그래프"
-        android:id="@+id/select_time_monthly_button"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="일간 그래프"
-        android:id="@+id/select_time_daily_button"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/select_time_yearly_button"
-        android:layout_marginBottom="150dp" />
 
 </RelativeLayout>

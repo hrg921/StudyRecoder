@@ -113,6 +113,7 @@ public class YearlyGraphActivity extends Activity {
         LineDataSet dataSet = new LineDataSet(entries, "Label");
         dataSet.setColor(Color.RED);
         dataSet.setValueTextColor(Color.YELLOW);
+        dataSet.setValueTextSize(0);
 
         LineData lineData = new LineData(dataSet);
         lineChart.setData(lineData);

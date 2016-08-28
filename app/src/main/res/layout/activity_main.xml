@@ -18,9 +18,19 @@
         android:text="RECORD"
         android:id="@+id/main_button_record"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="80dp"
         android:textSize="15dp"
         android:padding="20dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LIST"
+        android:id="@+id/main_button_list"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:padding="20dp"
+        android:textSize="15dp" />
 
     <Button
         android:layout_width="wrap_content"
@@ -31,4 +41,5 @@
         android:layout_marginTop="50dp"
         android:padding="20dp"
         android:textSize="15dp" />
+
 </LinearLayout>

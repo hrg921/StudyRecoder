@@ -17,8 +17,8 @@ import mp.hd3534.studyrecoder.Data.StudyData;
  */
 public class DbController {
 
-    private static final String SELECT_ALL_SQL = "SELECT year, month, date, hour, minute, second FROM " + DataBases.CreateDB._TABLENAME + " ORDER BY year ;";
-    private static final String SELECT_BY_WHERE_SQL = "SELECT year, month, date, hour, minute, second FROM " + DataBases.CreateDB._TABLENAME + " ORDER BY year ASC WHERE ";
+    private static final String SELECT_ALL_SQL = "SELECT _id, year, month, date, hour, minute, second FROM " + DataBases.CreateDB._TABLENAME + " ORDER BY year ;";
+    private static final String SELECT_BY_WHERE_SQL = "SELECT _id, year, month, date, hour, minute, second FROM " + DataBases.CreateDB._TABLENAME + " ORDER BY year ASC WHERE ";
 
     private DbOpenHelper dbOpenHelper;
     private SQLiteDatabase database;
@@ -58,14 +58,15 @@ public class DbController {
         // 5 : SECOND
 
         while (!results.isAfterLast()) {
-            int year = results.getInt(0);
-            int month = results.getInt(1);
-            int date = results.getInt(2);
-            int hour = results.getInt(3);
-            int minute = results.getInt(4);
-            int second = results.getInt(5);
+            int _id = results.getInt(0);
+            int year = results.getInt(1);
+            int month = results.getInt(2);
+            int date = results.getInt(3);
+            int hour = results.getInt(4);
+            int minute = results.getInt(5);
+            int second = results.getInt(6);
 
-            StudyData data = new StudyData(year, month, date, hour, minute, second);
+            StudyData data = new StudyData(_id, year, month, date, hour, minute, second);
 
             studyDataList.add(data);
 
@@ -82,14 +83,15 @@ public class DbController {
         int count = 0;
 
         while (!results.isAfterLast()) {
-            int year = results.getInt(0);
-            int month = results.getInt(1);
-            int date = results.getInt(2);
-            int hour = results.getInt(3);
-            int minute = results.getInt(4);
-            int second = results.getInt(5);
+            int _id = results.getInt(0);
+            int year = results.getInt(1);
+            int month = results.getInt(2);
+            int date = results.getInt(3);
+            int hour = results.getInt(4);
+            int minute = results.getInt(5);
+            int second = results.getInt(6);
 
-            StudyData data = new StudyData(year, month, date, hour, minute, second);
+            StudyData data = new StudyData(_id, year, month, date, hour, minute, second);
 
             studyDataList.add(data);
 
@@ -106,14 +108,15 @@ public class DbController {
         int count = 0;
 
         while (!results.isAfterLast()) {
-            int year = results.getInt(0);
-            int month = results.getInt(1);
-            int date = results.getInt(2);
-            int hour = results.getInt(3);
-            int minute = results.getInt(4);
-            int second = results.getInt(5);
+            int _id = results.getInt(0);
+            int year = results.getInt(1);
+            int month = results.getInt(2);
+            int date = results.getInt(3);
+            int hour = results.getInt(4);
+            int minute = results.getInt(5);
+            int second = results.getInt(6);
 
-            StudyData data = new StudyData(year, month, date, hour, minute, second);
+            StudyData data = new StudyData(_id, year, month, date, hour, minute, second);
 
             studyDataList.add(data);
 
