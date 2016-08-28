@@ -19,7 +19,7 @@ public final class DataBases {
 
         public static final String _CREATE =
                 "CREATE TABLE " + _TABLENAME + "(" +
-                "_ID INTEGER PRIMARY KEY AUTOINCREMENT" +
+                "_ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 YEAR + " INTEGER NOT NULL, " +
                 MONTH + " INTEGER NOT NULL, " +
                 DATE + " INTEGER NOT NULL, " +
