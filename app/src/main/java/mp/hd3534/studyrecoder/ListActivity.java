@@ -38,8 +38,9 @@ public class ListActivity extends Activity {
     }
 
     private void initList() {
-        listViewAdapter = new ListViewAdapter(getApplicationContext(), R.layout.listview_item, (StudyData[])studyDatas.toArray(), dbController);
+        listViewAdapter = new ListViewAdapter(getApplicationContext(), R.layout.listview_item, studyDatas.toArray(new StudyData[studyDatas.size()]), dbController);
         listView.setChoiceMode(AbsListView.CHOICE_MODE_NONE);
         listView.setAdapter(listViewAdapter);
     }
+//    image_urls.toArray(new String[image_urls.size()]);
 }
