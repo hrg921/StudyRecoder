@@ -11,6 +11,7 @@ import android.widget.Button;
 public class MainActivity extends Activity {
 
     private Button button_record;
+    private Button button_list;
     private Button button_graph;
 
     @Override
@@ -22,6 +23,7 @@ public class MainActivity extends Activity {
 
     private void initView() {
         button_record = (Button)findViewById(R.id.main_button_record);
+        button_list = (Button)findViewById(R.id.main_button_list);
         button_graph = (Button)findViewById(R.id.main_button_graph);
         initListeners();
     }
@@ -31,6 +33,13 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), RecordActivity.class);
+                startActivity(intent);
+            }
+        });
+        button_list.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), ListActivity.class);
                 startActivity(intent);
             }
         });
