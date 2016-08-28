@@ -17,7 +17,7 @@ public class ListActivity extends Activity {
     private List<StudyData> studyDatas;
 
     private ListView listView;
-    private ListViewAdapter listViewAdapter;
+    public ListViewAdapter listViewAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +38,7 @@ public class ListActivity extends Activity {
     }
 
     private void initList() {
-        listViewAdapter = new ListViewAdapter(this, R.layout.listview_item, studyDatas.toArray(new StudyData[studyDatas.size()]), dbController);
+        listViewAdapter = new ListViewAdapter(this, R.layout.listview_item, studyDatas, dbController);
         listView.setChoiceMode(AbsListView.CHOICE_MODE_NONE);
         listView.setAdapter(listViewAdapter);
     }
