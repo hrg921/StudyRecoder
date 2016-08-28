@@ -54,4 +54,12 @@ public class StudyData {
     public int getSecond() {
         return second;
     }
+
+    public String toStringDate() {
+        return year + "-" + month + "-" + date;
+    }
+
+    public String toStringHour() {
+        return hour + ":" + minute + ":" + second;
+    }
 }
