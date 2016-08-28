@@ -53,7 +53,6 @@ public class ListViewAdapter extends ArrayAdapter {
             @Override
             public void onClick(View v) {
                 dbController.delete(studyData.get_id());
-                this.notify();
             }
         });
 
