@@ -27,6 +27,8 @@
         </activity>
         <activity android:name=".GraphActivities.DailyGraphActivity" >
         </activity>
+        <activity android:name=".ListActivity" >
+        </activity>
     </application>
 
 </manifest>
